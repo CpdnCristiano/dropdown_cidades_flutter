@@ -1,0 +1,25 @@
+name: dropdown_cidades
+description: Um drowpdow das cidades brasileiras, vou usar em alguns projetos achei útil compatilhar com vocês
+version: 0.0.1
+homepage: https://github.com/cpdncristiano/dropdown_cidades_flutter
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0 <2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  assets:
+    - lib/assets/brasil.json
+
