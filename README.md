@@ -7,7 +7,7 @@ Um drowpdow das cidades brasileiras, vou usar em alguns projetos achei útil com
 ```dart
 DropdownCidades(
     widthDropdownCity: 200, // largura do dropdown de escolha de cidade
-    widthDropdownState: 200, // largura do dropdown de escolha de cidade
+    widthDropdownState: 200, // largura do dropdown de escolha de estado
     onChangedCity: (value) {
        print('A cidade selecionada é: $value');
     },
