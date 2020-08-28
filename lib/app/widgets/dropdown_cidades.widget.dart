@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class DropdownCidades extends StatefulWidget {
-
   // Call onChanged dropdown city;
   final Function(String) onChangedCity;
 
@@ -22,6 +21,7 @@ class DropdownCidades extends StatefulWidget {
   @override
   _DropdownCidadesState createState() => _DropdownCidadesState();
 
+  // Widget responsável por mostrar os estados.
   DropdownCidades(
       {this.onChangedCity,
       this.onChangedState,
@@ -36,7 +36,7 @@ class _DropdownCidadesState extends State<DropdownCidades> {
 
   getDados() async {
     String json = await rootBundle
-        .loadString('packages/dropdown_cidades/lib/assets/brasil.json');
+        .loadString('packages/dropdown_cidades/assets/brasil.json');
     _brasil = Country.fromJson(jsonDecode(json));
     setState(() {});
   }
@@ -57,12 +57,12 @@ class _DropdownCidadesState extends State<DropdownCidades> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * (30 / 100),
+                    width: widget.widthDropdownState ??
+                        MediaQuery.of(context).size.width * (30 / 100),
                     child: DropdownButton(
                       isExpanded: true,
                       value: _estadoSelecionado,
                       hint: Text("Selecione um estado"),
-                      elevation: 16,
                       onChanged: (int newValue) {
                         setState(() {
                           _estadoSelecionado = newValue;
@@ -84,7 +84,8 @@ class _DropdownCidadesState extends State<DropdownCidades> {
                     width: MediaQuery.of(context).size.width * (3 / 100),
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * (50 / 100),
+                    width: widget.widthDropdownCity ??
+                        MediaQuery.of(context).size.width * (50 / 100),
                     child: DropdownButton(
                       isExpanded: true,
                       value: _cidadeSelecionada,

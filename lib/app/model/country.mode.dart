@@ -1,10 +1,14 @@
 import 'package:dropdown_cidades/app/model/state.model.dart';
 
+// O pais bo caso o brasil
 class Country {
+  // A lista de estados do pais
   List<State> estados;
 
+  // construtor
   Country({this.estados});
 
+  // Construtor de pais apartir do json
   Country.fromJson(Map<String, dynamic> json) {
     if (json['estados'] != null) {
       estados = new List<State>();
@@ -13,13 +17,4 @@ class Country {
       });
     }
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.estados != null) {
-      data['estados'] = this.estados.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
 }
-

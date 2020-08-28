@@ -1,4 +1,4 @@
-import 'package:dropdown_cidades/app/widgets/dropdown_cidades.widgwt.dart';
+import 'package:dropdown_cidades/app/widgets/dropdown_cidades.widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
